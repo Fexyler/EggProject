@@ -1,0 +1,58 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Egg Counter Web Panel</title>
+    </head>
+    <body>
+	    <h1>Fexyler's Egg Counter</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message[1] }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form action="" method="post">
+            {{ form.csrf }}
+ 
+            <div>
+		    {{ form.first_thresh.label }}<br>
+		{{ form.first_thresh }}
+		<br>
+
+		{{ form.morph.label }}<br>
+               {{ form.morph }}
+	       <br>
+
+	       {{ form.gap.label }}<br>
+	      {{ form.gap }}
+	      <br>
+	      {{ form.template.label }}<br>
+	     {{ form.template }}
+	     <br>
+
+	     {{ form.sec_thresh.label }}<br>
+	    {{ form.sec_thresh }}
+	    <br>
+	    {{ form.abs_distance.label }}<br>
+	   {{ form.abs_distance }}
+	   <br>
+           {{form.border_size.label}}<br>
+          {{form.border_size}}
+          <br>
+                {{form.display.label}}<br>
+                {{form.display}}
+                <br>
+
+
+            </div>
+ 
+            <div class="input submit">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </body>
+</html>
